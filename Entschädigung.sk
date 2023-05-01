@@ -1,0 +1,29 @@
+#first skript ever! Skript = Geschenk
+#(%itemtype% with [custom] model data %number%)
+
+command /entschädigung:
+    permission: group.default
+    permission message: &a&lWONDERBUILD &8• &cDazu hast du keine Rechte!
+    trigger:
+        if {Geschenk::%player's uuid%} is not true:
+            give 20 Diamonds to player
+            give player a diamond sword with custom model data 2
+            send "" to player
+            send "&a&lEntschädigung &8• &7Du hast deine Entschädigung abgeholt!" to player
+            send "" to player
+            set {Geschenk::%player's uuid%} to true
+        else:
+            send "" to player
+            send "&a&lEntschädigung &8• &7Du hast deine Entschädigung bereits abgeholt!" to player
+            send "" to player
+
+    #trigger: 
+        #give 15 Diamonds to player
+        #give player a diamond sword with custom model data 2
+
+#on command:
+    #log "%name of player%" used command "/money add name of player 5000 to" commands.log
+
+#on command:
+	#log "%executor% used command / "commands.log"
+
